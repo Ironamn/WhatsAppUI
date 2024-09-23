@@ -1,5 +1,6 @@
 package com.example.whatsappui.Status
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -41,6 +42,9 @@ fun StatusScreen(modifier: Modifier = Modifier) {
     var isArrowDown by remember {
         mutableStateOf(false)
     }
+    var expended by remember {
+        mutableStateOf(false)
+    }
 
 
     Column {
@@ -80,17 +84,34 @@ fun StatusScreen(modifier: Modifier = Modifier) {
                         modifier = Modifier.padding(start = 15.dp, top = 20.dp)
                     )
                     Box(modifier = Modifier.fillMaxWidth()) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
+                        Column(
+                            modifier = Modifier
+                                .clickable { expended = !expended }
                         ) {
-                            Text(text = "Viewed updates", fontSize = 15.sp)
-                            Icon(
-                                imageVector = if (isArrowDown) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
-                                contentDescription = null,
-                                modifier = Modifier.clickable { isArrowDown = !isArrowDown }
-                            )
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text(text = "Viewed updates", fontSize = 15.sp)
+                                Icon(
+                                    imageVector =
+                                    if (isArrowDown)
+                                        Icons.Default.KeyboardArrowDown
+                                    else
+                                        Icons.Default.KeyboardArrowUp,
+                                    contentDescription = null,
+                                    modifier = Modifier.clickable { expended = !expended }
+                                )
+                            }
+                            AnimatedVisibility(expended) {
+                                LazyColumn(
+                                    modifier = Modifier
+                                ) {
+
+                                }
+
+                            }
                         }
                     }
                 }
@@ -98,3 +119,5 @@ fun StatusScreen(modifier: Modifier = Modifier) {
         }
     }
 }
+
+

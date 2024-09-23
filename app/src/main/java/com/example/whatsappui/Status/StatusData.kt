@@ -13,13 +13,12 @@ data class ProfilePhoto(
     val image:Int
 )
 
-
 val statusData = listOf(
     StatusData("Queen", R.drawable.froozen),
     StatusData("Shizuka", R.drawable.nobita),
     StatusData("YinYang", R.drawable.fish),
     StatusData("Mickey", R.drawable.mickey),
-    StatusData("Sukun", R.drawable.sunset),
+    StatusData("Shukun", R.drawable.sunset),
     StatusData("Dog", R.drawable.yourbesri),
     StatusData("Rabbit", R.drawable.zootopia),
     StatusData("Tom and Jerry", R.drawable.jerry),
