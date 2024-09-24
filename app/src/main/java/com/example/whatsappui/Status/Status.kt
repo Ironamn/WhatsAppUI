@@ -20,48 +20,47 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.whatsappui.Calls.CallingHistory1
 
-//
-//@Composable
-//fun StatusPreview(item: StatusData) {
-//    Box(
-//        modifier = Modifier.padding(20.dp)
-//    ) {
-//        Row(
-//            modifier = Modifier.fillMaxWidth(),
-//            verticalAlignment = Alignment.CenterVertically
-//        ) {
-//            Image(
-//                painter = painterResource(id =item.image),
-//                contentDescription = null,
-//                modifier = Modifier
-//                    .size(40.dp)
-//                    .clip(CircleShape),
-//                contentScale = ContentScale.Crop
-//            )
-//            Column(modifier = Modifier.padding(start = 15.dp)) {
-//                Text(
-//                    text = item.name,
-//                    fontWeight = FontWeight.Bold,
-//                    modifier = Modifier.padding(bottom = 8.dp)
-//                )
-//                Text(text = "5:23 PM")
-//            }
-//        }
-//    }
-//}
-//@Composable
-//fun CallingListHistory2(itemLists: List<StatusData>) {
-//    LazyColumn {
-//        items(itemLists){ item2 ->
-//            StatusPreview(item = item2)
-//        }
-//    }
-//}
-//
-//@Preview(showSystemUi = true)
-//@Composable
-//private fun StatusPreviewPreview() {
-//    CallingListHistory2(itemLists = statusData)
-//}
+@Composable
+fun StatusPreview(item: StatusData) {
+    Box(
+        modifier = Modifier.padding(20.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = item.image),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
+            )
+            Column(modifier = Modifier.padding(start = 15.dp)) {
+                Text(
+                    text = item.name,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+                Text(text = "5:23 PM")
+            }
+        }
+    }
+}
+
+@Composable
+fun CallingListHistory2(itemLists: List<StatusData>) {
+    LazyColumn {
+        items(itemLists) { item2 ->
+            StatusPreview(item = item2)
+        }
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+private fun StatusPreviewPreview() {
+    CallingListHistory2(itemLists = statusData)
+}

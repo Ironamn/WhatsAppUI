@@ -28,5 +28,5 @@ val items = listOf(
     ListItem("Dog", R.drawable.yourbesri),
     ListItem("YinYang", R.drawable.fish),
     ListItem("Mickey", R.drawable.mickey),
-    ListItem("Shizuka", R.drawable.nobita),
+    ListItem("Shizuka", R.drawable.nobita)
 )
