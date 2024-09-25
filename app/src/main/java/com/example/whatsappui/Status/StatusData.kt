@@ -35,6 +35,3 @@ val statusData = listOf(
     StatusData("Mickey", R.drawable.mickey),
     StatusData("Shizuka", R.drawable.nobita),
 )
-val profilePhoto = listOf(
-    ProfilePhoto("My status",R.drawable.yinyang)
-)
