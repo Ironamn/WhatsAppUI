@@ -39,7 +39,6 @@ import com.example.whatsappui.ui.theme.FavColor
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun CallingScreen(itemLists: List<ListItem>) {
-    val scrollState = rememberScrollState()
 
     Scaffold(modifier = Modifier.background(color = Color.Black),
         containerColor = BackgroundColor,
@@ -50,7 +49,7 @@ fun CallingScreen(itemLists: List<ListItem>) {
         Column(
             modifier = Modifier
                 .padding(innerPadding)
-//                .verticalScroll(scrollState)
+
         ) {
             FavouritesIcon()
 
@@ -88,7 +87,6 @@ fun CallingHistory(items: ListItem) {
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop
             )
-
 
             Column(
                 modifier = Modifier

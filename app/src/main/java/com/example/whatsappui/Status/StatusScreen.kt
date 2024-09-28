@@ -51,7 +51,7 @@ import com.example.whatsappui.ui.theme.BackgroundColor
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun StatusScreen2(onClick: () -> Unit = {}) {
-    Scaffold(
+    Scaffold(containerColor = BackgroundColor,
         topBar = {
             TopAppBar(title =
             { Text(text = "Calls", fontSize = 20.sp) },
