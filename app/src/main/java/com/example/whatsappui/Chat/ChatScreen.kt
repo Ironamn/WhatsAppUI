@@ -153,7 +153,7 @@ fun SearchBar() {
         },
         placeholder = {
             Text(
-                text = "Search",
+                text = "Ask Meta AI or Search",
                 fontSize = 20.sp
             )
         },
