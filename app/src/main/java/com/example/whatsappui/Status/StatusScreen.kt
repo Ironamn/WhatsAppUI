@@ -119,39 +119,7 @@ fun StatusScreen2(onClick: () -> Unit = {}) {
                 }
             )
         },
-        bottomBar = {
-            BottomAppBar(
-                content = {
-                    Row(
-                        modifier = Modifier.fillMaxSize(),
-                        horizontalArrangement = Arrangement.SpaceEvenly,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Rounded.Chat,
-                            contentDescription = "Chat",
-                            modifier = Modifier.size(30.dp)
-                        )
-                        Icon(
-                            imageVector = Icons.Rounded.Commit,
-                            contentDescription = "Update",
-                            modifier = Modifier.size(30.dp)
-                        )
-                        Icon(
-                            imageVector = Icons.Rounded.Person,
-                            contentDescription = "Communities",
-                            modifier = Modifier.size(30.dp)
-                        )
-                        Icon(
-                            imageVector = Icons.Rounded.Call,
-                            contentDescription = "Call",
-                            modifier = Modifier.size(30.dp)
-                        )
-                    }
 
-                }
-            )
-        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { onClick() },
@@ -202,10 +170,10 @@ fun StatusPhoto(item: StatusData) {
             Column(modifier = Modifier.padding(start = 15.dp)) {
                 Text(
                     text = item.name,
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = FontWeight.Bold, color = Color.White,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
-                Text(text = "5:23 PM")
+                Text(text = "5:23 PM", color = Color.White)
             }
         }
     }
@@ -230,7 +198,7 @@ fun StatusLazyColumn(itemLists: List<StatusData>) {
 @Composable
 fun StatusLogo() {
     Text(
-        text = "Status",
+        text = "Status", color = Color.White,
         fontSize = 25.sp, fontWeight = FontWeight.Bold,
         modifier = Modifier
             .padding(20.dp)
@@ -252,11 +220,11 @@ fun StatusLogo() {
 
             Text(
                 text = "My status", fontSize = 20.sp,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight.SemiBold, color = Color.White
             )
 
             Text(
-                text = "Tap to add status update",
+                text = "Tap to add status update", color = Color.White,
                 fontSize = 15.sp,
                 modifier = Modifier
                     .padding(10.dp)
@@ -272,11 +240,11 @@ fun StatusLogo() {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = "Viewed updates", fontSize = 15.sp)
+        Text(text = "Viewed updates", color = Color.White, fontSize = 15.sp)
 
         Icon(
             imageVector = Icons.Default.KeyboardArrowUp,
-            contentDescription = null
+            contentDescription = null, tint = Color.White
         )
     }
 
